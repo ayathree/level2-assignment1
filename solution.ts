@@ -1,5 +1,5 @@
 
-//Problem 1
+
 function formatValue(X: string | number | boolean): string | number | boolean {
     if (typeof X === 'string') {
         return X.toUpperCase();
@@ -10,7 +10,7 @@ function formatValue(X: string | number | boolean): string | number | boolean {
     }
 }
 
-//Problem 2
+
 function getLength(value : string | any[]):number{
     if(typeof value ==='string' ){
         return value.length
@@ -20,7 +20,7 @@ function getLength(value : string | any[]):number{
 
 }
 
-//Problem 3
+
 class Person{
     name:string;
     age:number;
@@ -36,7 +36,7 @@ class Person{
 }
 
 
-// Problem 4
+
 type RatedItem = {
     title: string;
     rating: number;
@@ -46,7 +46,7 @@ function filterByRating(items: RatedItem[]): RatedItem[] {
     return items.filter(item => item.rating >= 4 && item.rating <= 5);
 };
 
-//Problem 5
+
 type UserItem={
     id:number;
     name:string;
@@ -59,7 +59,7 @@ function filterActiveUsers (items:UserItem[]):UserItem[]{
 };
 
 
-//Problem 6
+
 interface Book{
     title:string;
     author:string;
@@ -72,7 +72,7 @@ function printBookDetails(book:Book):void{
 
 }
 
-//Problem 7
+
 function getUniqueValues(x:(string|number)[],y:(string|number)[]):(string|number)[]{
     const result:(string|number)[]=[];
     for(let i=0;i<x.length;i++){
@@ -103,7 +103,7 @@ function getUniqueValues(x:(string|number)[],y:(string|number)[]):(string|number
 
 }
 
-//Problem 8
+
 interface Product {
     name: string;
     price: number;

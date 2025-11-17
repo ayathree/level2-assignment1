@@ -45,4 +45,72 @@ const key4: UserKeys = "address"; // Error: '"address"' is not assignable to typ
 ```
 
 
+# What is the use of `enums` in TypeScript? Provide an example of a numeric and string enum.
+
+## Enum কি?
+`Enum` হলো TypeScript-এর একটি বিশেষ ফিচার যা related constant values-এর একটি named collection তৈরি করে। এটি basically একটি `group of named constants`.
+`Enum` TypeScript-এর একটি powerful feature যা codebase-এ `structure`, `readability`, এবং `type safety` add করতে পারে, কিন্তু সঠিক `use case`-এ ব্যবহার করতে হয়.
+## Enum-এর প্রকারভেদ:
+`Numeric Enum (default):`
+```bash
+enum Direction {
+    Up,      // 0
+    Down,    // 1
+    Left,    // 2
+    Right    // 3
+}
+```
+`String Enum:`
+```bash
+enum Color {
+    Red = "RED",
+    Green = "GREEN",
+    Blue = "BLUE"
+}
+```
+
+`Heterogeneous Enum (মিশ্র):`
+```bash
+enum Response {
+    No = 0,
+    Yes = "YES"
+}
+```
+
+## Enum-এর সুবিধা:
+- Readability বৃদ্ধি
+- Type Safety
+- Auto-completion Support
+
+## Modern Alternatives:
+`As Const Objects:`
+
+```bash
+const SIZE = {
+    SMALL: "small",
+    MEDIUM: "medium",
+    LARGE: "large"
+} as const;
+
+type Size = typeof SIZE[keyof typeof SIZE];
+```
+
+`Union Types:`
+
+```bash
+type Status = "pending" | "approved" | "rejected";
+type UserRole = "admin" | "user" | "guest";
+```
+
+## Summary:
+`Use enum when:`
+- Runtime-এ values needed
+- Reverse mapping needed
+- Numeric constants needed
+- Better autocomplete wanted
+`Use Union Types when:`
+- শুধুমাত্র compile-time safety needed
+- Simplicity preferred
+- Bundle size concerned
+
 
