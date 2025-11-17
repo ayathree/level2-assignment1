@@ -104,14 +104,14 @@ type UserRole = "admin" | "user" | "guest";
 
 ## Summary:
 `Use enum when:`
-- Runtime-এ values needed
-- Reverse mapping needed
-- Numeric constants needed
-- Better autocomplete wanted
+- Runtime-এ values দরকার
+- Reverse mapping দরকার
+- Numeric constants প্রয়োজন
+- Better autocomplete লাগবে
 
 `Use Union Types when:`
-- শুধুমাত্র compile-time safety needed
-- Simplicity preferred
-- Bundle size concerned
+- শুধুমাত্র compile-time safety প্রয়োজন
+- Simplicity preferred হয়
+- Bundle size concerned থাকে
 
 
