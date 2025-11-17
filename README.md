@@ -108,6 +108,7 @@ type UserRole = "admin" | "user" | "guest";
 - Reverse mapping needed
 - Numeric constants needed
 - Better autocomplete wanted
+
 `Use Union Types when:`
 - শুধুমাত্র compile-time safety needed
 - Simplicity preferred
