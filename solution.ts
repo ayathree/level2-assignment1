@@ -1,21 +1,31 @@
 
 
-function formatValue(X: string | number | boolean): string | number | boolean {
-    if (typeof X === 'string') {
-        return X.toUpperCase();
-    } else if (typeof X === 'number') {
-        return X * 10;
+function formatValue(value: string | number | boolean): string | number | boolean {
+    if (typeof value === 'string') {
+        return value.toUpperCase();
+    } else if (typeof value === 'number') {
+        return value * 10;
+    }else if(typeof value ==='boolean' ) {
+        if(value=true){
+            return false
+        }else{
+            return true
+        }
     }else{
-        return !X
+        return value;
     }
 }
 
 
 function getLength(value : string | any[]):number{
     if(typeof value ==='string' ){
-        return value.length
-    }else{
-        return value.length
+        return value.length;
+    }
+    if (Array.isArray(value)) {
+    return value.length; 
+    }
+    else{
+        return 0;
     }
 
 }
@@ -37,26 +47,29 @@ class Person{
 
 
 
-type RatedItem = {
+function filterByRating(items: {
     title: string;
     rating: number;
-};
-
-function filterByRating(items: RatedItem[]): RatedItem[] {
+}[]): {
+    title: string;
+    rating: number;
+}[] {
     return items.filter(item => item.rating >= 4 && item.rating <= 5);
-};
-
-
-type UserItem={
-    id:number;
-    name:string;
-    email:string;
-    isActive:boolean;
 }
-function filterActiveUsers (items:UserItem[]):UserItem[]{
-    return items.filter(item=>item.isActive === true);
 
-};
+function filterActiveUsers(items: {
+    id: number;
+    name: string;
+    email: string;
+    isActive: boolean;
+}[]): {
+    id: number;
+    name: string;
+    email: string;
+    isActive: boolean;
+}[] {
+    return items.filter(item => item.isActive === true);
+}
 
 
 
@@ -104,14 +117,12 @@ function getUniqueValues(x:(string|number)[],y:(string|number)[]):(string|number
 }
 
 
-interface Product {
+function calculateTotalPrice(products: {
     name: string;
     price: number;
     quantity: number;
-    discount?: number; 
-}
-
-function calculateTotalPrice(products: Product[]): number {
+    discount?: number;
+}[]): number {
     if (products.length === 0) {
         return 0;
     }
@@ -129,6 +140,7 @@ function calculateTotalPrice(products: Product[]): number {
     
     return individualTotals.reduce((sum, price) => sum + price, 0);
 }
+
 
 
 
