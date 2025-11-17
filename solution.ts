@@ -31,11 +31,20 @@ class Person{
     }
 
     getDetails(): string{
-        return (`Name:${this.name}, Age:${this.age};`)
+        return (`'Name:${this.name}, Age:${this.age}';`)
     }
 }
 
+
 // Problem 4
+type RatedItem = {
+    title: string;
+    rating: number;
+};
+
+function filterByRating(items: RatedItem[]): RatedItem[] {
+    return items.filter(item => item.rating >= 4 && item.rating <= 5);
+};
 
 
 
