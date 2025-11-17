@@ -73,6 +73,62 @@ function printBookDetails(book:Book):void{
 }
 
 //Problem 7
+function getUniqueValues(x:(string|number)[],y:(string|number)[]):(string|number)[]{
+    const result:(string|number)[]=[];
+    for(let i=0;i<x.length;i++){
+        let found=false;
+        for(let j=0;j<result.length;j++){
+            if (result[j]===x[i]){
+                found=true;
+                break
+            };
+        };
+        if(!found){
+            result.push(x[i])
+        }
+    }
+    for(let i=0;i<y.length;i++){
+        let found=false;
+        for(let j=0;j<result.length;j++){
+            if(result[j]===y[i]){
+                found=true;
+                break
+            };
+        };
+        if(!found){
+            result.push(y[i])
+        }
+    }
+    return result;
+
+}
+
+//Problem 8
+interface Product {
+    name: string;
+    price: number;
+    quantity: number;
+    discount?: number; 
+}
+
+function calculateTotalPrice(products: Product[]): number {
+    if (products.length === 0) {
+        return 0;
+    }
+    
+    const individualTotals = products.map(product => {
+        const basePrice = product.price * product.quantity;
+        
+        if (product.discount !== undefined && product.discount > 0) {
+            const discountAmount = basePrice * (product.discount / 100);
+            return basePrice - discountAmount;
+        }
+        
+        return basePrice;
+    });
+    
+    return individualTotals.reduce((sum, price) => sum + price, 0);
+}
 
 
 
