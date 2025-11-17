@@ -46,6 +46,20 @@ function filterByRating(items: RatedItem[]): RatedItem[] {
     return items.filter(item => item.rating >= 4 && item.rating <= 5);
 };
 
+//Problem 5
+type UserItem={
+    id:number;
+    name:string;
+    email:string;
+    isActive:boolean;
+}
+function filterActiveUsers (items:UserItem[]):UserItem[]{
+    return items.filter(item=>item.isActive === true);
+
+};
+
+
+//Problem 6
 
 
 
