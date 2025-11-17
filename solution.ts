@@ -9,3 +9,16 @@ function formatValue(X: string | number | boolean): string | number | boolean {
         return !X
     }
 }
+
+//Problem 2
+function getLength(value : string | any[]):number{
+    if(typeof value ==='string' ){
+        return value.length
+    }else{
+        return value.length
+    }
+
+}
+
+
+
