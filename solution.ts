@@ -41,7 +41,7 @@ class Person{
     }
 
     getDetails(): string{
-        return (`'Name:${this.name}, Age:${this.age}';`)
+        return (`'Name:${this.name}, Age:${this.age}'`)
     }
 }
 
@@ -57,6 +57,7 @@ function filterByRating(items: {
     return items.filter(item => item.rating >= 4 && item.rating <= 5);
 }
 
+
 function filterActiveUsers(items: {
     id: number;
     name: string;
@@ -70,7 +71,6 @@ function filterActiveUsers(items: {
 }[] {
     return items.filter(item => item.isActive === true);
 }
-
 
 
 interface Book{
@@ -93,7 +93,7 @@ function getUniqueValues(x:(string|number)[],y:(string|number)[]):(string|number
         for(let j=0;j<result.length;j++){
             if (result[j]===x[i]){
                 found=true;
-                break
+                break;
             };
         };
         if(!found){
@@ -105,7 +105,7 @@ function getUniqueValues(x:(string|number)[],y:(string|number)[]):(string|number
         for(let j=0;j<result.length;j++){
             if(result[j]===y[i]){
                 found=true;
-                break
+                break;
             };
         };
         if(!found){
