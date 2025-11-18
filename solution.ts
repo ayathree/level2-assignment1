@@ -130,7 +130,7 @@ function calculateTotalPrice(products: {
     const individualTotals = products.map(product => {
         const basePrice = product.price * product.quantity;
         
-        if (product.discount !== undefined && product.discount > 0) {
+        if (product.discount !== undefined && product.discount > 0 && product.discount <= 100) {
             const discountAmount = basePrice * (product.discount / 100);
             return basePrice - discountAmount;
         }
