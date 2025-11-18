@@ -88,28 +88,31 @@ function printBookDetails(book:Book):void{
 
 function getUniqueValues(x:(string|number)[],y:(string|number)[]):(string|number)[]{
     const result:(string|number)[]=[];
+    let resultLength = 0;
     for(let i=0;i<x.length;i++){
         let found=false;
-        for(let j=0;j<result.length;j++){
+        for(let j=0;j<resultLength;j++){
             if (result[j]===x[i]){
                 found=true;
                 break;
             };
         };
         if(!found){
-            result.push(x[i])
+            result[resultLength] = x[i];
+            resultLength++;
         }
     }
     for(let i=0;i<y.length;i++){
         let found=false;
-        for(let j=0;j<result.length;j++){
+        for(let j=0;j<resultLength;j++){
             if(result[j]===y[i]){
                 found=true;
                 break;
             };
         };
         if(!found){
-            result.push(y[i])
+            result[resultLength] = y[i];
+            resultLength++;
         }
     }
     return result;
@@ -140,6 +143,8 @@ function calculateTotalPrice(products: {
     
     return individualTotals.reduce((sum, price) => sum + price, 0);
 }
+
+
 
 
 
